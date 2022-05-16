@@ -9,6 +9,7 @@ The steps for this project are divided into the following sections:
 2. Establish a Baseline Performance
 3. Tune the Baseline Trading Algorithm
 4. Evaluate a New Machine Learning Classifier
+5. Evaluation Report
 
 ---
 
@@ -53,15 +54,38 @@ Here we experiment with various training periods and moving average values in or
 
 Below are examples:
 
-!(3_month_plot)
+![tuning](3_month_plot.png)
 Baseline result using 4/100 SMA and a 3 month training period
 
-!(80_200_MA_5_MO.png)
+![tuning](80_200_MA_5_MO.png)
 Optimal result using 80/200 SMA and a 5 month training period
+
+![tuning](4_120_MA.png)
+Less than optimal results using 4/120 SMA
+
+![tuning](4_200_MA.png)
+Less than optimal results using 4/200 SMA
+
+![tuning](9_month_plot.png)
+Less than optimal results using 4/200 SMA
+
+
 
 ## **Evaluate a New Machine Learning Classifier**
 
+In this section, we implement adaboost classifier. Below is a screenshot of the results using the baseline inputs.
 
+![adaboost](adaboost.png "adaboost") ![tuning](3_month_plot.png "SVC learn")
+The baseline inputs have slightly better strategy outputs using adaboost instead of SVC Learn
+
+## **Evaluation Report:**
+
+After tuning the SVC classifier, we have found the following:
+
+-The best training period is 5 months
+-The best performance values for moving average are 80 for the short period, and 200 for the long period.
+
+Using adaboost produces slightly better results.
 
 
 ---
